@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@id/root" android:background="@android:color/black" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.camera.view.PreviewView android:id="@id/preview" android:layout_width="match_parent" android:layout_height="match_parent" />
+    <View android:id="@id/flash" android:background="@android:color/white" android:layout_width="match_parent" android:layout_height="match_parent" android:alpha="0.0" />
+    <LinearLayout android:orientation="vertical" android:id="@id/top" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="12.0dp" android:paddingEnd="12.0dp">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+            <ImageButton android:id="@id/btnSettings" android:background="@drawable/bg_chip" android:layout_width="44.0dp" android:layout_height="44.0dp" android:src="@drawable/ic_settings" android:contentDescription="@string/settings_title" />
+            <TextView android:id="@id/btnAnswer" android:text="@string/last_answer" android:layout_marginStart="8.0dp" style="@style/Chip" />
+            <Space android:layout_width="0.0dp" android:layout_height="1.0dp" android:layout_weight="1.0" />
+            <TextView android:id="@id/btnFlash" android:text="@string/flash_off" style="@style/Chip" />
+        </LinearLayout>
+        <TextView android:textSize="14.0sp" android:textColor="#1a1a1a" android:id="@id/banner" android:background="@drawable/bg_banner" android:padding="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dp" android:text="@string/service_off" />
+    </LinearLayout>
+    <LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/bottom" android:background="@color/panel" android:paddingTop="10.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="14.0sp" android:textColor="@color/text" android:id="@id/status" android:paddingBottom="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/hint_empty" android:paddingStart="16.0dp" android:paddingEnd="16.0dp" />
+        <HorizontalScrollView android:id="@id/thumbsScroll" android:scrollbars="none" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+            <LinearLayout android:orientation="horizontal" android:id="@id/thumbs" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </HorizontalScrollView>
+        <FrameLayout android:layout_width="match_parent" android:layout_height="112.0dp" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+            <TextView android:layout_gravity="start|center" android:id="@id/btnClear" android:text="@string/clear" style="@style/Chip" />
+            <ImageButton android:layout_gravity="center" android:id="@id/btnShutter" android:background="@drawable/shutter" android:layout_width="80.0dp" android:layout_height="80.0dp" android:contentDescription="@string/shutter" />
+            <Button android:enabled="false" android:textSize="16.0sp" android:textStyle="bold" android:textColor="#0b0b0b" android:layout_gravity="end|center" android:id="@id/btnSend" android:background="@drawable/bg_button_primary" android:layout_width="wrap_content" android:layout_height="52.0dp" android:text="@string/send" android:textAllCaps="false" android:paddingStart="22.0dp" android:paddingEnd="22.0dp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

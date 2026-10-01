@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@id/scroll" android:background="@color/bg" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/content" android:paddingBottom="32.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingStart="16.0dp" android:paddingEnd="16.0dp">
+        <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="@color/text" android:gravity="center_vertical" android:id="@id/btnBack" android:layout_width="match_parent" android:layout_height="56.0dp" android:text="←  Настройки" />
+        <TextView android:text="Служба" style="@style/Section" />
+        <TextView android:textSize="15.0sp" android:id="@id/serviceState" style="@style/Hint" />
+        <Button android:id="@id/btnA11y" android:text="Открыть «Спец. возможности»" style="@style/Btn" />
+        <Button android:id="@id/btnAppInfo" android:text="О приложении (разрешить ограниченные настройки)" style="@style/Btn" />
+        <TextView android:text="Промпт для DeepSeek" style="@style/Section" />
+        <TextView android:text="Уходит в DeepSeek вместе с фото. {N} заменяется числом фото. Списки символов сверены со шрифтом прошивки G2." style="@style/Hint" />
+        <EditText android:textSize="13.0sp" android:gravity="start|top" android:id="@id/prompt" android:scrollbars="vertical" android:maxLines="18" android:minLines="8" android:inputType="textMultiLine|textNoSuggestions" android:importantForAutofill="no" style="@style/Field" />
+        <Button android:id="@id/btnResetPrompt" android:text="Вернуть стандартный промпт" style="@style/Btn" />
+        <TextView android:text="Отправка в DeepSeek" style="@style/Section" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swShare" android:text="Передавать фото через «Поделиться» (если DeepSeek это поддерживает)" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swPromptShare" android:text="Промпт вместе с фото: DeepSeek сразу получает текст, печатать не нужно (проверяется по полю ввода; не встал — печатается)" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swCollage" android:text="Склеивать все фото в одну картинку" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swNewChat" android:text="Каждое задание — в новом чате DeepSeek (в конце отправки открывается новый чат: «Поделиться» кладёт фото в открытый чат)" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swGallery" android:text="Сохранять отправленные фото в галерею" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swClear" android:text="Удалять снимки после успешной отправки" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swSearchOff" android:text="Выключать «Поиск» в DeepSeek перед отправкой (поиск в интернете заметно замедляет ответ)" style="@style/Switch" />
+        <TextView android:text="Максимальная сторона фото, px (меньше — быстрее загрузка)" style="@style/Hint" />
+        <EditText android:id="@id/maxSide" android:inputType="number" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:text="Ответ" style="@style/Section" />
+        <TextView android:text="Сколько максимум ждать ответ DeepSeek, секунд" style="@style/Hint" />
+        <EditText android:id="@id/timeout" android:inputType="number" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:text="Ответ готов, если текст на экране не меняется столько секунд" style="@style/Hint" />
+        <EditText android:id="@id/quiet" android:inputType="number" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:text="Максимум символов на очки (0 — без ограничения)" style="@style/Hint" />
+        <EditText android:id="@id/maxChars" android:inputType="number" android:importantForAutofill="no" style="@style/Field" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swBlank" android:text="Убирать пустые строки (на очках видно всего ~7 строк)" style="@style/Switch" />
+        <TextView android:text="Even Realities / Teleprompt" style="@style/Section" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swStart" android:text="Сразу запускать сценарий на очках (если есть кнопка «Старт»)" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swErrorsGlasses" android:text="При ошибке показать на очках, что не так (сценарий «G2 Snap: ошибка»)" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swHome" android:text="В конце выйти на главный экран телефона" style="@style/Switch" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swReturn" android:text="Вместо главного экрана вернуться в G2 Snap" style="@style/Switch" />
+        <TextView android:text="Автоотправка" style="@style/Section" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swAutoSend" android:text="Отправлять фото сами после паузы (каждый новый снимок начинает отсчёт заново; коснитесь строки состояния, чтобы отменить)" style="@style/Switch" />
+        <TextView android:text="Отсчёт идёт в фоне: можно уйти из G2 Snap, в другое приложение или выключить экран кнопкой питания — фото уйдут сами, ответ встанет в Teleprompt, в конце откроется главный экран." style="@style/Hint" />
+        <TextView android:text="Через сколько секунд после последнего снимка отправлять" style="@style/Hint" />
+        <EditText android:id="@id/autoSendSec" android:inputType="number" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:text="Экран" style="@style/Section" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swBlackout" android:text="Экран выключен во время отправки: чёрный экран с начала до самого конца, в конце телефон сам гасит экран (как кнопкой питания)" style="@style/Switch" />
+        <TextView android:text="Кнопка питания посреди отправки или отсчёта не мешает, пока телефон не заблокирован: G2 Snap сам включит экран (под чёрным окном, если режим включён), продолжит и в конце снова погасит экран. Заблокирован PIN-кодом — Android не пускает автоматику дальше экрана блокировки, отправка продолжится после разблокировки. Чтобы кнопка питания не блокировала сразу: Настройки → Экран блокировки / Безопасность → «Блокировать сразу кнопкой питания» — выкл., «Автоблокировка после отключения экрана» — 5 минут или больше." style="@style/Hint" />
+        <TextView android:text="Ярлык" style="@style/Section" />
+        <androidx.appcompat.widget.SwitchCompat android:id="@id/swCover" android:text="Заглушка: на рабочем столе приложение выглядит как «Заметки» (жёлтый лист). Лаунчер обновляет значок за несколько секунд" style="@style/Switch" />
+        <TextView android:text="Приложения" style="@style/Section" />
+        <TextView android:text="Пакет DeepSeek" style="@style/Hint" />
+        <EditText android:id="@id/pkgDeepSeek" android:inputType="textNoSuggestions" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:text="Пакет приложения Even Realities" style="@style/Hint" />
+        <EditText android:id="@id/pkgEven" android:inputType="textNoSuggestions" android:importantForAutofill="no" style="@style/Field" />
+        <Button android:id="@id/btnCheckApps" android:text="Проверить приложения" style="@style/Btn" />
+        <TextView android:id="@id/appsNote" android:visibility="gone" android:textIsSelectable="true" style="@style/Hint" />
+        <TextView android:text="Обучение кнопок" style="@style/Section" />
+        <TextView android:text="Если автоматика не находит кнопку — покажите её один раз: «Обучить» → откроется нужное приложение → дойдите до экрана с кнопкой → «Выбрать» → нажмите на кнопку в рамке. Обученная кнопка важнее автопоиска." style="@style/Hint" />
+        <LinearLayout android:orientation="vertical" android:id="@id/calibList" android:layout_width="match_parent" android:layout_height="wrap_content" />
+        <TextView android:text="Кнопки, которые сработали, приложение запоминает само и в следующий раз находит их сразу. Если запомненная кнопка подведёт, она забывается автоматически." style="@style/Hint" />
+        <Button android:id="@id/btnForgetLearned" android:text="Забыть запомненные кнопки" style="@style/Btn" />
+        <TextView android:text="Проверка и диагностика" style="@style/Section" />
+        <Button android:id="@id/btnTestDeepSeek" android:text="Проверить DeepSeek (вопрос без фото)" style="@style/Btn" />
+        <Button android:id="@id/btnTestEven" android:text="Проверить Even (тестовый текст в Teleprompt)" style="@style/Btn" />
+        <TextView android:id="@id/testNote" android:visibility="gone" android:textIsSelectable="true" style="@style/Hint" />
+        <Button android:id="@id/btnDump" android:text="Снять дамп экрана через 5 секунд" style="@style/Btn" />
+        <Button android:id="@id/btnShareLogs" android:text="Поделиться логом и дампами" style="@style/Btn" />
+        <TextView android:text="Проверка текста для очков" style="@style/Section" />
+        <TextView android:text="Вставьте любой ответ (Markdown, LaTeX, эмодзи) — ниже будет то, что уйдёт на очки." style="@style/Hint" />
+        <EditText android:gravity="start|top" android:id="@id/sandboxIn" android:minLines="4" android:inputType="textMultiLine|textNoSuggestions" android:importantForAutofill="no" style="@style/Field" />
+        <TextView android:id="@id/sandboxOut" android:minLines="3" android:textIsSelectable="true" style="@style/Field" />
+        <TextView android:id="@id/sandboxInfo" style="@style/Hint" />
+    </LinearLayout>
+</ScrollView>

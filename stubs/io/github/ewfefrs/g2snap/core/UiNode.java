@@ -1,0 +1,2 @@
+package io.github.ewfefrs.g2snap.core;
+public final class UiNode { public final Bounds getBounds(){return null;} public final String getText(){return null;} public final String getDesc(){return null;} public final String getHint(){return null;} public final String getViewId(){return null;} public final String getPackageName(){return null;} public final String getClassName(){return null;} public final boolean getEditable(){return false;} public final UiNode clickTarget(int i){return null;} }
